@@ -1,17 +1,15 @@
-#ifndef SIZE_HPP
-#define SIZE_HPP
+#ifndef VECTOR_HPP
+#define VECTOR_HPP
 
 struct Vector2 {
   int x;
   int y;
 };
 
-struct Vector3
-{
-	int x;
-	int y;
-	int z;
+struct Vector3 {
+  int x;
+  int y;
+  int z;
 };
 
-
-#endif  // SIZE_HPP
+#endif  // VECTOR_HPP
