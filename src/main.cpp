@@ -7,13 +7,11 @@
 #include <string>
 #include <vector>
 
-GLfloat rotation_y{0.0f};
-GLfloat position_y{0.0f};
-int refreshMills{15};
-float iteration{0.0f};
 std::vector<IShape*> shapes{};
+unsigned int refresh_mills{15};
+float iteration{0.0f};
 
-void init() {
+void init_config() {
   glClearColor(0.0f, 0.3f, 0.4f, 1.0f);
   glClearDepth(1.0f);
   glEnable(GL_DEPTH_TEST);
@@ -24,7 +22,7 @@ void init() {
 
 void timer(int value) {
   glutPostRedisplay();
-  glutTimerFunc(refreshMills, timer, 0);
+  glutTimerFunc(refresh_mills, timer, 0);
 }
 
 void reshape(GLsizei width, GLsizei height) {
@@ -57,7 +55,7 @@ int main(int argc, char** argv) {
 
   glutDisplayFunc(display);
   glutReshapeFunc(reshape);
-  init();
+  init_config();
   glutTimerFunc(0, timer, 0);
   glutMainLoop();
   return 0;
