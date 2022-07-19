@@ -9,7 +9,6 @@
 
 std::vector<IShape*> shapes{};
 unsigned int refresh_mills{15};
-float iteration{0.0f};
 
 void init_config() {
   glClearColor(0.0f, 0.3f, 0.4f, 1.0f);
