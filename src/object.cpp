@@ -15,3 +15,9 @@ void Object::tick() {
   glRotatef(transform.rotation.y, 0.0f, 1.0f, 0.0f);
   glRotatef(transform.rotation.z, 0.0f, 0.0f, 1.0f);
 }
+
+void Object::create(void (*obj)()) {
+	glBegin(GL_TRIANGLES);
+	obj();
+	glEnd();
+}

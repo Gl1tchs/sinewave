@@ -5,9 +5,7 @@
 #include <iostream>
 #include <pyramid.hpp>
 
-Pyramid::Pyramid() : iteration(0.0f) {
-  transform.position.z = -6.0f;
-}
+Pyramid::Pyramid() : iteration(0.0f) { transform.position.z = -6.0f; }
 
 void Pyramid::tick() {
   Object::tick();
@@ -16,38 +14,36 @@ void Pyramid::tick() {
 
   transform.position.y = sin(iteration);
   transform.rotation.y += 0.8f;
+  
+  Object::create([]() {
+    glColor4f(1.0f, 1.0f, 0.0f, 1.0f);  // yellow
+    glVertex3f(0.0f, 1.0f, 0.0f);
+    glColor4f(1.0f, 0.0f, 0.0f, 1.0f);  // red
+    glVertex3f(-1.0f, -1.0f, 1.0f);
+    glColor4f(1.0f, 0.0f, 0.0f, 1.0f);  // red
+    glVertex3f(1.0f, -1.0f, 1.0f);
 
-  glBegin(GL_TRIANGLES);
+    glColor4f(1.0f, 1.0f, 0.0f, 1.0f);  // yellow
+    glVertex3f(0.0f, 1.0f, 0.0f);
+    glColor4f(1.0f, 0.0f, 0.0f, 1.0f);  // red
+    glVertex3f(1.0f, -1.0f, 1.0f);
+    glColor4f(1.0f, 0.0f, 0.0f, 1.0f);  // red
+    glVertex3f(1.0f, -1.0f, -1.0f);
 
-  glColor4f(1.0f, 1.0f, 0.0f, 1.0f);  // yellow
-  glVertex3f(0.0f, 1.0f, 0.0f);
-  glColor4f(1.0f, 0.0f, 0.0f, 1.0f);  // red
-  glVertex3f(-1.0f, -1.0f, 1.0f);
-  glColor4f(1.0f, 0.0f, 0.0f, 1.0f);  // red
-  glVertex3f(1.0f, -1.0f, 1.0f);
+    glColor4f(1.0f, 1.0f, 0.0f, 1.0f);  // yellow
+    glVertex3f(0.0f, 1.0f, 0.0f);
+    glColor4f(1.0f, 0.0f, 0.0f, 1.0f);  // red
+    glVertex3f(1.0f, -1.0f, -1.0f);
+    glColor4f(1.0f, 0.0f, 0.0f, 1.0f);  // red
+    glVertex3f(-1.0f, -1.0f, -1.0f);
 
-  glColor4f(1.0f, 1.0f, 0.0f, 1.0f);  // yellow
-  glVertex3f(0.0f, 1.0f, 0.0f);
-  glColor4f(1.0f, 0.0f, 0.0f, 1.0f);  // red
-  glVertex3f(1.0f, -1.0f, 1.0f);
-  glColor4f(1.0f, 0.0f, 0.0f, 1.0f);  // red
-  glVertex3f(1.0f, -1.0f, -1.0f);
-
-  glColor4f(1.0f, 1.0f, 0.0f, 1.0f);  // yellow
-  glVertex3f(0.0f, 1.0f, 0.0f);
-  glColor4f(1.0f, 0.0f, 0.0f, 1.0f);  // red
-  glVertex3f(1.0f, -1.0f, -1.0f);
-  glColor4f(1.0f, 0.0f, 0.0f, 1.0f);  // red
-  glVertex3f(-1.0f, -1.0f, -1.0f);
-
-  glColor4f(1.0f, 1.0f, 0.0f, 1.0f);  // yellow
-  glVertex3f(0.0f, 1.0f, 0.0f);
-  glColor4f(1.0f, 0.0f, 0.0f, 1.0f);  // red
-  glVertex3f(-1.0f, -1.0f, -1.0f);
-  glColor4f(1.0f, 0.0f, 0.0f, 1.0f);  // red
-  glVertex3f(-1.0f, -1.0f, 1.0f);
-
-  glEnd();
+    glColor4f(1.0f, 1.0f, 0.0f, 1.0f);  // yellow
+    glVertex3f(0.0f, 1.0f, 0.0f);
+    glColor4f(1.0f, 0.0f, 0.0f, 1.0f);  // red
+    glVertex3f(-1.0f, -1.0f, -1.0f);
+    glColor4f(1.0f, 0.0f, 0.0f, 1.0f);  // red
+    glVertex3f(-1.0f, -1.0f, 1.0f);
+  });
 
   glutSwapBuffers();
 }

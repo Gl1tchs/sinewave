@@ -7,6 +7,9 @@ class Object {
  public:
   virtual void tick();
   Transform transform;
+
+ protected:
+  void create(void (*obj)());
 };
 
 #endif  // OBJECT_HPP

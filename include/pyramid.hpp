@@ -8,7 +8,6 @@ class Pyramid : public Object {
   Pyramid();
   virtual void tick();
 
- private:
   float iteration;
 };
 
