@@ -10,7 +10,6 @@ class Pyramid : public Object {
 
  private:
   float iteration;
-  float rotation_y;
 };
 
 #endif  // TRIANGLE_HPP
