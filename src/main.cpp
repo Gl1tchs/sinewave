@@ -64,7 +64,7 @@ void tick() {
   }
 }
 
-bool alt_key_pressed;
+bool alt_key_pressed{false};
 
 /**
  * @brief Handles keyboard events from current window.
