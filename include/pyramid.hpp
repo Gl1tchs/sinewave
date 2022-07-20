@@ -20,5 +20,5 @@ class Pyramid : public Object {
    * @brief Current iteration triggered by tick function.
    *
    */
-  float iteration;
+  float m_iteration;
 };

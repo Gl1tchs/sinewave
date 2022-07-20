@@ -5,19 +5,19 @@
 #include <iostream>
 #include <pyramid.hpp>
 
-Pyramid::Pyramid() : iteration(0.0f) {
+Pyramid::Pyramid() : m_iteration(0.0f) {
   // Set initiazl Z position of the object.
-  transform.position.z = -6.0f;
+  transform.position.z = -8.0f;
 }
 
 void Pyramid::tick() {
   // Call base tick function.
   Object::tick();
 
-  iteration += 0.01f;
+  m_iteration += 0.01f;
 
   // The actual wave animation.
-  transform.position.y = sin(iteration);
+  transform.position.y = sin(m_iteration);
 
   // Rotate object by Y axis.
   transform.rotation.y += 0.8f;
