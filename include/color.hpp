@@ -1,8 +1,5 @@
-#ifndef COLOR_HPP
-#define COLOR_HPP
+#pragma once
 
 struct Color {
   float r, g, b, a{1.0f};
 };
-
-#endif  // COLOR_HPP

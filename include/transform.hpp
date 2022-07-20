@@ -1,5 +1,4 @@
-#ifndef TRANSFORM_HPP
-#define TRANSFORM_HPP
+#pragma once
 
 struct Position {
   float x, y, z;
@@ -14,5 +13,3 @@ class Transform {
   Position position;
   Rotation rotation;
 };
-
-#endif  // TRANSFORM_HPP

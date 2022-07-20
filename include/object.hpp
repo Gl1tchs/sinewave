@@ -1,5 +1,4 @@
-#ifndef OBJECT_HPP
-#define OBJECT_HPP
+#pragma once
 
 #include <transform.hpp>
 
@@ -11,5 +10,3 @@ class Object {
  protected:
   void create(void (*obj)());
 };
-
-#endif  // OBJECT_HPP

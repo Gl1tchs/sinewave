@@ -1,5 +1,4 @@
-#ifndef TRIANGLE_HPP
-#define TRIANGLE_HPP
+#pragma once
 
 #include <object.hpp>
 
@@ -10,5 +9,3 @@ class Pyramid : public Object {
 
   float iteration;
 };
-
-#endif  // TRIANGLE_HPP
