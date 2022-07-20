@@ -12,7 +12,7 @@
  * @brief Shapes defined in the space.
  *
  */
-std::vector<Object*> shapes{};
+static std::vector<Object*> shapes{};
 
 /**
  * @brief Initializes window.
@@ -64,6 +64,8 @@ void tick() {
   }
 }
 
+bool alt_key_pressed;
+
 /**
  * @brief Handles keyboard events from current window.
  *
@@ -73,11 +75,31 @@ void tick() {
  */
 void handle_keyboard_events(unsigned char key, int x, int y) {
   switch (key) {
+    case GLUT_ACTIVE_ALT:
+      alt_key_pressed = true;
+      break;
     case 27:
       // Exit program if esc key pressed.
       exit(EXIT_SUCCESS);
     default:
-      break;
+      if (alt_key_pressed) {
+        // If alt key pressed set it to false
+        alt_key_pressed = false;
+      }
+  }
+}
+
+/**
+ * @brief Handles keyboard events from special keys in current window
+ *
+ * @param key Pressed key
+ * @param x Mouse x location
+ * @param y Mouse y location
+ */
+void handle_special_key_events(int key, int x, int y) {
+  // Alt + F4 exit event.
+  if (alt_key_pressed && key == GLUT_KEY_F4) {
+    exit(0);
   }
 }
 
@@ -96,6 +118,7 @@ int main(int argc, char** argv) {
 
   // Assign functions.
   glutDisplayFunc(tick);
+  glutSpecialFunc(handle_special_key_events);
   glutKeyboardFunc(handle_keyboard_events);
   glutReshapeFunc(handle_reshape_event);
 
