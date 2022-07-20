@@ -14,7 +14,7 @@ void Pyramid::tick() {
 
   transform.position.y = sin(iteration);
   transform.rotation.y += 0.8f;
-  
+
   Object::create([]() {
     glColor4f(1.0f, 1.0f, 0.0f, 1.0f);  // yellow
     glVertex3f(0.0f, 1.0f, 0.0f);

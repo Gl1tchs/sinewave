@@ -17,7 +17,7 @@ void Object::tick() {
 }
 
 void Object::create(void (*obj)()) {
-	glBegin(GL_TRIANGLES);
-	obj();
-	glEnd();
+  glBegin(GL_TRIANGLES);
+  obj();
+  glEnd();
 }
