@@ -64,6 +64,10 @@ void tick() {
   }
 }
 
+/**
+ * @brief True if alt key pressed.
+ *
+ */
 bool alt_key_pressed{false};
 
 /**
