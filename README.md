@@ -30,7 +30,7 @@ So the y position of object is gonna be the numbers between -1 and 1 and it will
 
 ## Installation
 
-First you must install `gl` and `glut` libraries and `build-essential` package. Then you can build and run with following commands.
+First you must install `gl`, `glut` libraries and `build-essential` package. Then you can build and run with following commands.
 
 ```bash
 # clone and enter directory
