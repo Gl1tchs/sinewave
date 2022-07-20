@@ -9,10 +9,10 @@
 #include <vector>
 
 /**
- * @brief Shapes defined in the space.
+ * @brief Objects in the space.
  *
  */
-static std::vector<Object*> shapes{};
+static std::vector<Object*> objects{};
 
 /**
  * @brief Initializes window.
@@ -59,7 +59,7 @@ void handle_reshape_event(GLsizei width, GLsizei height) {
  *
  */
 void tick() {
-  for (auto shape : shapes) {
+  for (auto shape : objects) {
     shape->tick();
   }
 }
@@ -118,7 +118,7 @@ int main(int argc, char** argv) {
   Pyramid* pyramid = new Pyramid();
 
   // Push it to shapes vector.
-  shapes.push_back(pyramid);
+  objects.push_back(pyramid);
 
   // Assign functions.
   glutDisplayFunc(tick);
