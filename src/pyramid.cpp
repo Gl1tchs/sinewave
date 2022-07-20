@@ -9,8 +9,8 @@ Pyramid::Pyramid() : iteration(0.0f), rotation_y(0.0f) {
   transform.position.z = -6.0f;
 }
 
-void Pyramid::display() {
-  Object::display();
+void Pyramid::tick() {
+  Object::tick();
 
   iteration += 0.01f;
 

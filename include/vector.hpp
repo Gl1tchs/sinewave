@@ -2,14 +2,11 @@
 #define VECTOR_HPP
 
 struct Vector2 {
-  int x;
-  int y;
+  float x, y;
 };
 
 struct Vector3 {
-  int x;
-  int y;
-  int z;
+  float x, y, z;
 };
 
 #endif  // VECTOR_HPP

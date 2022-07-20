@@ -5,7 +5,7 @@
 
 class Object {
  public:
-  virtual void display();
+  virtual void tick();
   Transform transform;
 };
 

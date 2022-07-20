@@ -35,9 +35,9 @@ void reshape(GLsizei width, GLsizei height) {
   gluPerspective(45.0f, aspect, 0.1f, 100.0f);
 }
 
-void display() {
+void tick() {
   for (auto shape : shapes) {
-    shape->display();
+    shape->tick();
   }
 }
 
@@ -52,7 +52,7 @@ int main(int argc, char** argv) {
 
   shapes.push_back(pyramid);
 
-  glutDisplayFunc(display);
+  glutDisplayFunc(tick);
   glutReshapeFunc(reshape);
   init_config();
   glutTimerFunc(0, timer, 0);

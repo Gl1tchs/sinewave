@@ -6,7 +6,7 @@
 class Pyramid : public Object {
  public:
   Pyramid();
-  virtual void display();
+  virtual void tick();
 
  private:
   float iteration;
