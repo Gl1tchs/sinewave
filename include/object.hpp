@@ -4,9 +4,23 @@
 
 class Object {
  public:
+  /**
+   * @brief Called every frame.
+   *
+   */
   virtual void tick();
+
+  /**
+   * @brief Transform of the object in the space.
+   *
+   */
   Transform transform;
 
  protected:
-  void create(void (*obj)());
+  /**
+   * @brief Creates opengl object.
+   *
+   * @param object Triangles as function.
+   */
+  void create(void (*object)());
 };
