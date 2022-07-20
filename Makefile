@@ -1,23 +1,28 @@
 CC=g++
-ARGS=-Wall
+CFLAGS=-Wall
 LIBS=-lglut -lGLU -lGL
 IDIR=-I./include/
-IFILES=src/pyramid.cpp src/main.cpp
-ODIR=bin
-OFILENAME=sinewave
-OFILE=${ODIR}/${OFILENAME}
+SOURCES=src/object.cpp src/pyramid.cpp src/main.cpp
+OUTDIR=bin
+OUTFILENAME=sinewave
+OUTFILE=${OUTDIR}/${OUTFILENAME}
 
 all:
-	${CC} ${ARGS} ${LIBS} ${IDIR} ${IFILES} -o ${OFILE}
+	@echo Building files...
+	${CC} ${ARGS} ${LIBS} ${IDIR} ${SOURCES} -o ${OUTFILE}
 
 run:
-	${OFILE}
+	@echo Starting animation...
+	${OUTFILE}
 
 clear:
-	rm -rf ${ODIR}/*
+	@echo Removing binaries...
+	rm -rf ${OUTDIR}/*
 
 install:
-	sudo cp -r ${OFILE} /usr/bin/${OFILENAME}
+	@echo Installing globally...
+	sudo cp -r ${OUTFILE} /usr/bin/${OUTFILENAME}
 
 uninstall:
-	sudo rm /usr/bin/${OFILENAME}
+	@echo Removing globally...
+	sudo rm /usr/bin/${OUTFILENAME}

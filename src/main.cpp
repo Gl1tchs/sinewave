@@ -2,12 +2,12 @@
 
 #include <cmath>
 #include <memory>
+#include <object.hpp>
 #include <pyramid.hpp>
-#include <shape.hpp>
 #include <string>
 #include <vector>
 
-std::vector<IShape*> shapes{};
+std::vector<Object*> shapes{};
 unsigned int refresh_mills{15};
 
 void init_config() {

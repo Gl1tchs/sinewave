@@ -1,9 +1,9 @@
 #ifndef TRIANGLE_HPP
 #define TRIANGLE_HPP
 
-#include <shape.hpp>
+#include <object.hpp>
 
-class Pyramid : public IShape {
+class Pyramid : public Object {
  public:
   Pyramid();
   virtual void display();

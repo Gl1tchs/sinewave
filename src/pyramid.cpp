@@ -5,20 +5,17 @@
 #include <iostream>
 #include <pyramid.hpp>
 
-Pyramid::Pyramid() : iteration(0.0f), rotation_y(0.0f) {}
+Pyramid::Pyramid() : iteration(0.0f), rotation_y(0.0f) {
+  transform.position.z = -6.0f;
+}
 
 void Pyramid::display() {
-  glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-  glMatrixMode(GL_MODELVIEW);
-
-  glLoadIdentity();
+  Object::display();
 
   iteration += 0.01f;
 
-  glTranslatef(0.0f, sin(iteration), -6.0f);
-
-  glRotatef(rotation_y, 0.0f, 1.0f, 0.0f);
-  rotation_y += 0.8f;
+  transform.position.y = sin(iteration);
+  transform.rotation.y += 0.8f;
 
   glBegin(GL_TRIANGLES);
 
