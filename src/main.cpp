@@ -135,5 +135,6 @@ int main(int argc, char** argv) {
 
   // Start program loop.
   glutMainLoop();
+
   return EXIT_SUCCESS;
 }
